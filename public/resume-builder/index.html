@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeCraft — Build a Professional Resume in Minutes</title>
+  <meta name="description" content="ResumeCraft is a free browser-based resume builder. Build, customize and download a job-ready resume with live preview, 4 templates and ATS-friendly mode.">
+  <meta property="og:title" content="ResumeCraft — Build a Professional Resume in Minutes">
+  <meta property="og:description" content="Build a professional resume. Get noticed. Get hired. Live preview, 4 templates, ATS mode and PDF export — all in your browser.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="ResumeCraft home">
+        <span class="brand-mark" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg>
+        </span>
+        <span class="brand-name">Resume<span>Craft</span></span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#templates">Templates</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <span data-auth-slot></span>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle dark mode"><span data-theme-icon>☾</span></button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+        <a class="btn btn-primary btn-sm" href="builder.html">Create My Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ---------------- hero ---------------- -->
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Build a professional resume. Get noticed. Get hired.</span>
+          <h1>Create a Professional Resume in Minutes</h1>
+          <p class="lead">Build, customize and download a job-ready resume without complicated software. Everything runs in your browser — no sign-up needed, no data uploaded.</p>
+          <div class="hero-cta">
+            <a class="btn btn-primary" href="builder.html">Create My Resume</a>
+            <a class="btn btn-outline" href="#templates">Explore Templates</a>
+          </div>
+          <ul class="hero-trust">
+            <li><span class="dot"></span> 4 recruiter-ready templates</li>
+            <li><span class="dot"></span> Live preview while you type</li>
+            <li><span class="dot"></span> ATS-friendly mode</li>
+          </ul>
+        </div>
+
+        <!-- CSS/HTML-only resume mockup -->
+        <div class="mockup-wrap">
+          <div class="mockup" aria-hidden="true">
+            <div class="mockup-top">
+              <div class="mockup-avatar"></div>
+              <div style="flex:1;display:grid;gap:8px">
+                <div class="bar dark-bar" style="width:58%;height:14px"></div>
+                <div class="bar brand-bar" style="width:40%"></div>
+              </div>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-col">
+                <div class="bar brand-bar" style="width:70%"></div>
+                <div class="bar" style="width:92%"></div>
+                <div class="bar" style="width:80%"></div>
+                <div class="bar" style="width:86%"></div>
+                <div class="bar brand-bar" style="width:60%;margin-top:8px"></div>
+                <div class="chip-row">
+                  <span class="chip">Java</span><span class="chip">SQL</span><span class="chip">React</span>
+                </div>
+              </div>
+              <div class="mockup-col">
+                <div class="bar brand-bar" style="width:44%"></div>
+                <div class="bar" style="width:100%"></div>
+                <div class="bar" style="width:94%"></div>
+                <div class="bar" style="width:88%"></div>
+                <div class="bar brand-bar" style="width:38%;margin-top:8px"></div>
+                <div class="bar" style="width:96%"></div>
+                <div class="bar" style="width:82%"></div>
+                <div class="bar" style="width:90%"></div>
+                <div class="bar" style="width:70%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="mockup-badge">Resume Strength · 92/100</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- features ---------------- -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Features</span>
+          <h2>Everything you need to write a stronger resume</h2>
+          <p>Purpose-built for students, freshers and experienced professionals who want a clean, recruiter-friendly resume fast.</p>
+        </div>
+        <div class="grid grid-3">
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 5h16M4 12h10M4 19h7"/></svg></div>
+            <h3>Easy Resume Builder</h3>
+            <p>Create a professional resume with simple, guided forms — one section at a time.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="18" rx="1"/><rect x="14" y="3" width="7" height="8" rx="1"/><rect x="14" y="13" width="7" height="8" rx="1"/></svg></div>
+            <h3>Professional Templates</h3>
+            <p>Four modern resume designs — Modern, Classic, Creative and Minimal — switch anytime.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></div>
+            <h3>Live Preview</h3>
+            <p>See the resume preview update instantly as you edit every field.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9V3h12v6"/><rect x="6" y="13" width="12" height="8" rx="1"/><path d="M4 9h16v6H4z"/></svg></div>
+            <h3>PDF Ready</h3>
+            <p>Print or save your resume as a clean A4 PDF with your browser's print dialog.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><path d="M17 21v-8H7v8M7 3v5h8"/></svg></div>
+            <h3>Auto Save</h3>
+            <p>Your information is saved in the browser's localStorage as you type.</p>
+          </article>
+          <article class="card">
+            <div class="card-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M11 18h2"/></svg></div>
+            <h3>Mobile Friendly</h3>
+            <p>Fully responsive on mobile, tablet, laptop and desktop with touch-friendly controls.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- templates ---------------- -->
+    <section class="section" id="templates" style="background:var(--surface)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Templates</span>
+          <h2>Pick a template, then make it yours</h2>
+          <p>Change colors, fonts and spacing instantly. Every template supports ATS-friendly mode.</p>
+        </div>
+        <div class="grid grid-4">
+          <article class="card tpl-card">
+            <div class="tpl-thumb modern"><div class="t-side"></div><div style="display:grid;gap:6px;align-content:start"><div class="t-name"></div><div class="t-line"></div><div class="t-line" style="width:80%"></div><div class="t-line" style="width:90%"></div><div class="t-line" style="width:70%"></div></div></div>
+            <div class="tpl-meta"><div><strong>Modern</strong><br><span>Sidebar layout</span></div><button class="btn btn-outline btn-sm" type="button" data-use-template="modern">Use</button></div>
+          </article>
+          <article class="card tpl-card">
+            <div class="tpl-thumb"><div class="t-name" style="margin:0 auto"></div><div class="t-line"></div><div class="t-line" style="width:88%"></div><div class="t-line" style="width:94%"></div><div class="t-line" style="width:76%"></div></div>
+            <div class="tpl-meta"><div><strong>Classic</strong><br><span>Traditional serif</span></div><button class="btn btn-outline btn-sm" type="button" data-use-template="classic">Use</button></div>
+          </article>
+          <article class="card tpl-card">
+            <div class="tpl-thumb creative"><div class="t-name"></div><div class="t-line" style="width:92%"></div><div class="t-line" style="width:70%"></div><div class="t-line" style="width:86%"></div><div class="t-line" style="width:60%"></div></div>
+            <div class="tpl-meta"><div><strong>Creative</strong><br><span>Bold header</span></div><button class="btn btn-outline btn-sm" type="button" data-use-template="creative">Use</button></div>
+          </article>
+          <article class="card tpl-card">
+            <div class="tpl-thumb"><div class="t-name" style="background:#555"></div><div class="t-line" style="width:96%"></div><div class="t-line" style="width:64%"></div><div class="t-line" style="width:82%"></div><div class="t-line" style="width:72%"></div></div>
+            <div class="tpl-meta"><div><strong>Minimal</strong><br><span>ATS-friendly</span></div><button class="btn btn-outline btn-sm" type="button" data-use-template="minimal">Use</button></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- how it works ---------------- -->
+    <section class="section" id="how">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">How it works</span>
+          <h2>From blank page to job-ready in four steps</h2>
+        </div>
+        <div class="grid grid-4 steps">
+          <article class="card step"><h3>Fill your details</h3><p>Add personal info, education, experience, skills and projects.</p></article>
+          <article class="card step"><h3>Choose a template</h3><p>Switch between four designs and watch the preview change instantly.</p></article>
+          <article class="card step"><h3>Customize the design</h3><p>Tune colors, fonts, spacing and reorder sections by drag and drop.</p></article>
+          <article class="card step"><h3>Download as PDF</h3><p>Check your resume score, then print or save a clean A4 PDF.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- FAQ ---------------- -->
+    <section class="section" id="faq" style="background:var(--surface)">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq">
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">Is ResumeCraft free?<span class="plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><p>Yes. This frontend version lets you create and customize resumes directly in the browser at no cost.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">Can I download my resume?<span class="plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><p>Yes. Use the Print / Save as PDF option and choose "Save as PDF" in your browser's print dialog.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">Is my data uploaded anywhere?<span class="plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><p>No. In this frontend-only version, all information — including your profile photo — stays in your browser's local storage.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">Can I edit my resume later?<span class="plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><p>Yes. Your resume is auto-saved locally, so you can reopen the builder on the same browser and continue editing.</p></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-q" type="button" aria-expanded="false">Is the resume ATS friendly?<span class="plus" aria-hidden="true">+</span></button>
+            <div class="faq-a"><p>Yes. Turn on ATS-friendly mode for a clean single-column layout with plain fonts and clear section headings that Applicant Tracking Systems parse easily.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ---------------- CTA ---------------- -->
+    <section class="section">
+      <div class="container">
+        <div class="cta-banner">
+          <h2>Your next opportunity starts with a better resume</h2>
+          <p>Build it in minutes, download it as a PDF and apply with confidence.</p>
+          <div style="margin-top:20px"><a class="btn btn-on-brand" href="builder.html">Create My Resume</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="brand" style="margin-bottom:10px">
+            <span class="brand-mark" aria-hidden="true">R</span>
+            <span class="brand-name">Resume<span>Craft</span></span>
+          </div>
+          <p>Build your future, one resume at a time.</p>
+        </div>
+        <div><h4>Product</h4><ul><li><a href="index.html">Home</a></li><li><a href="#features">Features</a></li><li><a href="#templates">Templates</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="#faq">Privacy</a></li><li><a href="#faq">Terms</a></li><li><a href="#faq">Contact</a></li></ul></div>
+        <div><h4>Account</h4><ul><li><a href="login.html">Login</a></li><li><a href="signup.html">Sign up</a></li><li><a href="builder.html">Builder</a></li></ul></div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> ResumeCraft. All rights reserved.</span>
+        <span>Turn your skills and experience into a resume that stands out.</span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="toast-stack" role="status" aria-live="polite"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

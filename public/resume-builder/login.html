@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login — ResumeCraft</title>
+  <meta name="description" content="Log in to ResumeCraft to continue building and customizing your professional resume. Frontend demo login stored locally in your browser.">
+  <meta property="og:title" content="Login — ResumeCraft">
+  <meta property="og:description" content="Log in to continue building your job-ready resume with ResumeCraft.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">R</span><span class="brand-name">Resume<span>Craft</span></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#templates">Templates</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span data-auth-slot></span>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle dark mode"><span data-theme-icon>☾</span></button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation">☰</button>
+        <a class="btn btn-primary btn-sm" href="builder.html">Create My Resume</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="auth-wrap">
+    <aside class="auth-aside">
+      <h2>Welcome back to ResumeCraft</h2>
+      <p>Build a professional resume. Get noticed. Get hired.</p>
+      <ul>
+        <li>✓ Continue where you left off</li>
+        <li>✓ Four professional templates</li>
+        <li>✓ Live preview and resume score</li>
+        <li>✓ Print or save as PDF anytime</li>
+      </ul>
+    </aside>
+
+    <section class="auth-main">
+      <div class="auth-card">
+        <div class="card">
+          <h1 style="font-size:1.6rem">Log in</h1>
+          <p>Enter your details to continue building your resume.</p>
+          <form id="loginForm" novalidate>
+            <div class="field">
+              <label class="required" for="liEmail">Email</label>
+              <input type="email" id="liEmail" name="email" autocomplete="email" placeholder="you@example.com">
+              <span class="error-msg"></span>
+            </div>
+            <div class="field">
+              <label class="required" for="liPassword">Password</label>
+              <input type="password" id="liPassword" name="password" autocomplete="current-password" placeholder="Your password">
+              <span class="error-msg"></span>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Log in</button>
+          </form>
+          <p class="auth-alt">New here? <a href="signup.html">Create an account</a></p>
+          <p class="demo-note">Continue your journey and take the next step toward building a resume that stands out.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom" style="margin-top:0;border:0">
+      <span>&copy; <span data-year>2026</span> ResumeCraft. All rights reserved.</span>
+      <span><a href="index.html">Home</a></span>
+    </div>
+  </footer>
+
+  <div class="toast-stack" role="status" aria-live="polite"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

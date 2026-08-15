@@ -1,0 +1,78 @@
+/* ==========================================================================
+   ResumeCraft — responsive rules (desktop -> laptop -> tablet -> mobile)
+   ========================================================================== */
+
+/* laptop */
+@media (max-width: 1180px) {
+  .hero-grid { gap: 34px; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .dash-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* small laptop / large tablet */
+@media (max-width: 1024px) {
+  .nav-links { display: none; }
+  .nav { grid-template-columns: auto 1fr auto; }
+  .nav-toggle { display: grid; }
+
+  .site-header.menu-open .nav-links {
+    display: grid;
+    position: absolute;
+    left: 0; right: 0; top: 70px;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    padding: 12px 20px 18px;
+    gap: 2px;
+  }
+  .site-header.menu-open .nav-links a { display: block; padding: 12px 14px; border-radius: var(--radius-sm); }
+  .site-header { position: sticky; }
+
+  .builder-layout { grid-template-columns: minmax(0, 1fr); }
+  .preview-col { position: static; order: 2; }
+  .form-panel { order: 1; }
+}
+
+/* tablet */
+@media (max-width: 900px) {
+  .section { padding: 62px 0; }
+  .hero { padding: 48px 0 64px; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr); }
+  .mockup { transform: none; }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .auth-wrap { grid-template-columns: minmax(0, 1fr); min-height: 0; }
+  .auth-aside { padding: 40px 24px; }
+  .builder-bar { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* mobile */
+@media (max-width: 640px) {
+  h1 { font-size: 2rem; }
+  .section { padding: 48px 0; }
+  .grid-3, .grid-4, .dash-grid { grid-template-columns: minmax(0, 1fr); }
+  .footer-grid { grid-template-columns: minmax(0, 1fr); gap: 24px; }
+  .two-col, .custom-grid { grid-template-columns: minmax(0, 1fr); }
+  .template-picker { grid-template-columns: 1fr 1fr; }
+  .cta-banner { padding: 36px 20px; }
+
+  /* touch-friendly controls */
+  .btn { min-height: 48px; width: 100%; }
+  .btn-sm { min-height: 42px; width: auto; }
+  .hero-cta .btn, .bar-actions .btn { flex: 1 1 100%; }
+  .card { padding: 20px; }
+  .toast-stack { left: 12px; right: 12px; bottom: 12px; width: auto; }
+
+  .preview-frame { padding: 8px; }
+}
+
+/* very small phones */
+@media (max-width: 380px) {
+  .brand-name { font-size: 1rem; }
+  .template-picker { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  html { scroll-behavior: auto; }
+}

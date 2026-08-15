@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Builder — ResumeCraft</title>
+  <meta name="description" content="Fill in your details and watch a professional A4 resume build itself live. Four templates, color customization, ATS mode, resume score and PDF export.">
+  <meta property="og:title" content="Resume Builder — ResumeCraft">
+  <meta property="og:description" content="Build, customize and download a job-ready resume with live preview, templates and a resume strength score.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/builder.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <header class="site-header no-print">
+    <div class="container nav">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true">R</span><span class="brand-name">Resume<span>Craft</span></span></a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#templates">Templates</a></li>
+        <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="login.html">Login</a></li>
+      </ul>
+      <div class="nav-actions">
+        <span data-auth-slot></span>
+        <button class="icon-btn" type="button" data-theme-toggle aria-label="Toggle dark mode"><span data-theme-icon>☾</span></button>
+        <button class="icon-btn nav-toggle" type="button" data-nav-toggle aria-label="Toggle navigation">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="builder-shell">
+    <div class="container">
+      <!-- ------------ action bar ------------ -->
+      <div class="builder-bar">
+        <div>
+          <h1>Resume Builder</h1>
+          <div class="sub">Build a professional resume. Get noticed. Get hired. <span class="save-status" id="saveStatus">Not saved yet</span></div>
+        </div>
+        <div class="bar-actions">
+          <button class="btn btn-outline btn-sm" type="button" id="loadBtn">Load Resume</button>
+          <button class="btn btn-danger btn-sm" type="button" id="clearBtn">Clear Resume</button>
+          <button class="btn btn-outline btn-sm" type="button" id="saveBtn">Save Resume</button>
+          <button class="btn btn-primary btn-sm" type="button" id="printBtn">Print / Download PDF</button>
+        </div>
+      </div>
+
+      <!-- ------------ dashboard ------------ -->
+      <section class="dash-section no-print" style="margin-bottom:22px">
+        <div class="dash-grid">
+          <div class="dash-card"><div class="label">Resume Completion</div><div class="value" id="dashCompletion">0%</div></div>
+          <div class="dash-card"><div class="label">Resume Score</div><div class="value" id="dashScore">0/100</div></div>
+          <div class="dash-card"><div class="label">Last Saved</div><div class="value small" id="dashSaved">Not saved yet</div></div>
+          <div class="dash-card"><div class="label">Selected Template</div><div class="value small" id="dashTemplate">Modern</div></div>
+        </div>
+        <div class="bar-actions" style="margin-top:12px">
+          <button class="btn btn-outline btn-sm" type="button" id="editResumeBtn">Edit Resume</button>
+          <button class="btn btn-outline btn-sm" type="button" id="previewBtn">Preview</button>
+          <button class="btn btn-outline btn-sm" type="button" id="printResumeBtn">Print Resume</button>
+          <button class="btn btn-ghost btn-sm" type="button" id="newResumeBtn">Create New Resume</button>
+        </div>
+      </section>
+
+      <div class="builder-layout">
+        <!-- ============ LEFT: form ============ -->
+        <form class="form-panel no-print" id="builderForm" novalidate>
+
+          <!-- Personal information -->
+          <section class="accordion open" id="personalSection">
+            <button class="accordion-head" type="button" aria-expanded="true"><span class="step-dot">1</span><span>Personal Information</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <div class="photo-row">
+                <div class="photo-preview" id="photoPreview">No photo</div>
+                <div>
+                  <div class="photo-actions">
+                    <button class="btn btn-outline btn-sm" type="button" id="photoPickBtn">Upload Photo</button>
+                    <button class="btn btn-danger btn-sm" type="button" id="photoRemoveBtn">Remove Photo</button>
+                  </div>
+                  <p class="hint" style="margin:8px 0 0">Stays in your browser — the photo is never uploaded anywhere.</p>
+                  <input class="hidden-input" type="file" id="photoInput" accept="image/*">
+                </div>
+              </div>
+
+              <div class="two-col">
+                <div class="field"><label class="required" for="fullName">Full Name</label><input type="text" id="fullName" placeholder="Alok Kumar"><span class="error-msg"></span></div>
+                <div class="field"><label for="jobTitle">Professional Title</label><input type="text" id="jobTitle" placeholder="Full Stack Developer"><span class="error-msg"></span></div>
+                <div class="field"><label class="required" for="email">Email</label><input type="email" id="email" placeholder="you@example.com"><span class="error-msg"></span></div>
+                <div class="field"><label class="required" for="phone">Phone</label><input type="tel" id="phone" placeholder="+91 98765 43210"><span class="error-msg"></span></div>
+                <div class="field"><label for="location">Location</label><input type="text" id="location" placeholder="Bengaluru, India"><span class="error-msg"></span></div>
+                <div class="field"><label for="linkedin">LinkedIn</label><input type="text" id="linkedin" placeholder="linkedin.com/in/username"><span class="error-msg"></span></div>
+                <div class="field"><label for="github">GitHub</label><input type="text" id="github" placeholder="github.com/username"><span class="error-msg"></span></div>
+                <div class="field"><label for="website">Portfolio Website</label><input type="text" id="website" placeholder="yourname.dev"><span class="error-msg"></span></div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Summary -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">2</span><span>Professional Summary</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <div class="field">
+                <label for="summary">Summary</label>
+                <textarea id="summary" rows="5" placeholder="Write a short professional summary..."></textarea>
+                <div class="counter" id="summaryCounter">0 / 600 characters</div>
+              </div>
+              <p class="hint">Aim for 3–4 lines: your role, years of experience, key strengths and what you want next.</p>
+            </div>
+          </section>
+
+          <!-- Education -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">3</span><span>Education</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <p class="empty-note" data-empty="education">No education added yet.</p>
+              <div id="educationList"></div>
+              <button class="btn btn-outline btn-sm" type="button" data-add="education">+ Add Education</button>
+            </div>
+          </section>
+
+          <!-- Experience -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">4</span><span>Work Experience</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <p class="empty-note" data-empty="experience">No experience added yet.</p>
+              <div id="experienceList"></div>
+              <button class="btn btn-outline btn-sm" type="button" data-add="experience">+ Add Experience</button>
+            </div>
+          </section>
+
+          <!-- Skills -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">5</span><span>Skills</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <p class="hint">Type a skill and press Enter. You can paste a comma-separated list too (Java, JavaScript, HTML, CSS, SQL).</p>
+              <div class="tag-input-row">
+                <div class="field" style="margin:0"><label class="skip-link" for="skillInput">Skill</label><input type="text" id="skillInput" placeholder="e.g. JavaScript"></div>
+                <button class="btn btn-outline btn-sm" type="button" id="addSkillBtn">Add Skill</button>
+              </div>
+              <div class="tag-list" id="skillsList"></div>
+            </div>
+          </section>
+
+          <!-- Projects -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">6</span><span>Projects</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <p class="empty-note" data-empty="projects">No projects added yet.</p>
+              <div id="projectsList"></div>
+              <button class="btn btn-outline btn-sm" type="button" data-add="projects">+ Add Project</button>
+            </div>
+          </section>
+
+          <!-- Certifications -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">7</span><span>Certifications</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <p class="empty-note" data-empty="certifications">No certifications added yet.</p>
+              <div id="certificationsList"></div>
+              <button class="btn btn-outline btn-sm" type="button" data-add="certifications">+ Add Certification</button>
+            </div>
+          </section>
+
+          <!-- Achievements -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">8</span><span>Achievements</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <p class="empty-note" data-empty="achievements">No achievements added yet.</p>
+              <div id="achievementsList"></div>
+              <button class="btn btn-outline btn-sm" type="button" data-add="achievements">+ Add Achievement</button>
+            </div>
+          </section>
+
+          <!-- Languages -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">9</span><span>Languages</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <p class="empty-note" data-empty="languages">No languages added yet.</p>
+              <div id="languagesList"></div>
+              <button class="btn btn-outline btn-sm" type="button" data-add="languages">+ Add Language</button>
+            </div>
+          </section>
+
+          <!-- Hobbies -->
+          <section class="accordion">
+            <button class="accordion-head" type="button" aria-expanded="false"><span class="step-dot">10</span><span>Hobbies / Interests</span><span class="caret">▾</span></button>
+            <div class="accordion-body">
+              <div class="field"><label for="hobbies">Interests</label><input type="text" id="hobbies" placeholder="Chess, open-source, long-distance running"><span class="error-msg"></span></div>
+            </div>
+          </section>
+
+          <button class="btn btn-primary btn-block" type="submit">Save Resume</button>
+        </form>
+
+        <!-- ============ RIGHT: preview + controls ============ -->
+        <div class="preview-col">
+          <!-- resume score -->
+          <div class="score-card no-print">
+            <div class="score-top"><strong>Resume Strength</strong><span class="score-value" id="scoreValue">0/100</span></div>
+            <div class="progress"><div class="progress-bar" id="scoreBar"></div></div>
+            <p class="score-msg" id="scoreMsg">Your resume needs more information.</p>
+            <p class="score-missing" id="scoreMissing"></p>
+          </div>
+
+          <!-- template picker -->
+          <div class="panel no-print">
+            <h3>Template</h3>
+            <div class="template-picker">
+              <button class="tpl-btn active" type="button" data-template="modern" aria-pressed="true">Modern</button>
+              <button class="tpl-btn" type="button" data-template="classic" aria-pressed="false">Classic</button>
+              <button class="tpl-btn" type="button" data-template="creative" aria-pressed="false">Creative</button>
+              <button class="tpl-btn" type="button" data-template="minimal" aria-pressed="false">Minimal</button>
+            </div>
+          </div>
+
+          <!-- customization -->
+          <div class="panel no-print">
+            <h3>Customize</h3>
+            <div class="custom-grid">
+              <div class="field"><label for="primaryColor">Primary color</label><input type="color" id="primaryColor" value="#2563eb"></div>
+              <div class="field"><label for="accentColor">Accent color</label><input type="color" id="accentColor" value="#1e40af"></div>
+              <div class="field"><label for="fontFamily">Font style</label>
+                <select id="fontFamily">
+                  <option value="&quot;Segoe UI&quot;, Roboto, Arial, sans-serif">Segoe UI (sans-serif)</option>
+                  <option value="Georgia, &quot;Times New Roman&quot;, serif">Georgia (serif)</option>
+                  <option value="&quot;Trebuchet MS&quot;, Verdana, sans-serif">Trebuchet MS</option>
+                  <option value="&quot;Courier New&quot;, monospace">Courier New (mono)</option>
+                </select>
+              </div>
+              <div class="field"><label for="fontSize">Font size <span id="fontSizeOut">13px</span></label><input type="range" id="fontSize" min="11" max="16" step="0.5" value="13"></div>
+              <div class="field"><label for="spacing">Section spacing <span id="spacingOut">18px</span></label><input type="range" id="spacing" min="8" max="34" step="1" value="18"></div>
+            </div>
+            <div class="switch-row" style="margin-top:8px">
+              <div>
+                <strong style="font-size:0.9rem">ATS-Friendly Resume</strong>
+                <p class="ats-note">ATS-friendly resumes are easier for Applicant Tracking Systems to read.</p>
+              </div>
+              <label class="switch"><input type="checkbox" id="atsToggle" aria-label="Toggle ATS-friendly resume"><span class="track"></span></label>
+            </div>
+          </div>
+
+          <!-- section order -->
+          <div class="panel no-print">
+            <h3>Section order — drag to rearrange</h3>
+            <ul class="order-list" id="sectionOrder">
+              <li class="order-item" data-key="summary"><span class="grip" aria-hidden="true">⠿</span><span>Professional Summary</span><span class="idx">1</span></li>
+              <li class="order-item" data-key="experience"><span class="grip" aria-hidden="true">⠿</span><span>Work Experience</span><span class="idx">2</span></li>
+              <li class="order-item" data-key="education"><span class="grip" aria-hidden="true">⠿</span><span>Education</span><span class="idx">3</span></li>
+              <li class="order-item" data-key="skills"><span class="grip" aria-hidden="true">⠿</span><span>Skills</span><span class="idx">4</span></li>
+              <li class="order-item" data-key="projects"><span class="grip" aria-hidden="true">⠿</span><span>Projects</span><span class="idx">5</span></li>
+              <li class="order-item" data-key="certifications"><span class="grip" aria-hidden="true">⠿</span><span>Certifications</span><span class="idx">6</span></li>
+              <li class="order-item" data-key="achievements"><span class="grip" aria-hidden="true">⠿</span><span>Achievements</span><span class="idx">7</span></li>
+              <li class="order-item" data-key="languages"><span class="grip" aria-hidden="true">⠿</span><span>Languages</span><span class="idx">8</span></li>
+              <li class="order-item" data-key="interests"><span class="grip" aria-hidden="true">⠿</span><span>Interests</span><span class="idx">9</span></li>
+            </ul>
+            <p class="hint" style="margin:10px 0 0">Tip: focus an item and use the arrow keys to reorder with the keyboard.</p>
+          </div>
+
+          <!-- live A4 preview -->
+          <div class="preview-frame" id="previewFrame">
+            <div class="a4-scaler">
+              <article class="resume" id="resumePreview" data-template="modern" aria-label="Live resume preview"></article>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer no-print">
+    <div class="container footer-bottom" style="margin-top:0;border:0">
+      <span>&copy; <span data-year>2026</span> ResumeCraft. All rights reserved.</span>
+      <span>Build your future, one resume at a time.</span>
+    </div>
+  </footer>
+
+  <div class="toast-stack no-print" role="status" aria-live="polite"></div>
+
+  <script src="js/storage.js"></script>
+  <script src="js/validation.js"></script>
+  <script src="js/templates.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/builder.js"></script>
+</body>
+</html>
